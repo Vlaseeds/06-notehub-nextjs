@@ -1,15 +1,9 @@
 "use client";
-
-import type { ComponentType } from "react";
-import ReactPaginateModule from "react-paginate";
-import type { ReactPaginateProps } from "react-paginate";
+import dynamic from 'next/dynamic';
 import css from './Pagination.module.css';
 
-type ModuleWithDefault<T> = { default: T };
 
-const ReactPaginate = (
-  ReactPaginateModule as unknown as ModuleWithDefault<ComponentType<ReactPaginateProps>>
-).default;
+const ReactPaginate = dynamic(() => import('react-paginate'), { ssr: false });
 
 interface PaginationProps {
   totalPages: number;
