@@ -3,8 +3,8 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-// 🔥 Змінили шлях імпорту на новий файл api.ts
-import { createNote } from '../../lib/api'; 
+// змінити шлях імпорту на новий файл api.ts
+import { createNote } from '../../lib'; 
 import type { CreateNotePayload } from '../../types/note';
 import css from './NoteForm.module.css';
 
